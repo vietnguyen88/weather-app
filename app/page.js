@@ -48,10 +48,13 @@ const ChartData = ({ dataWeather }) => {
   )
 }
 
-const getDate = () => {
-  const date = new Date().toLocaleString('en-AU', { timeZone: "Australia/Sydney", hour12: false })
+const findIconSmall = (code) => {
+  if (code) {
+    const icon = weather_icon.find(item => item.code === code)
+    //  console.log(icon);
+   return icon.icon
 
-  return date
+  }
 }
 
 export default function Home() {
@@ -144,7 +147,7 @@ export default function Home() {
           {selectedWeather ? <div>
             <div className="text-center">
               <div className="mt-2">{selectedLocation}</div>
-              <Image src={icon?.icon} height={200} width={200} className="mx-auto" alt="" />
+              <Image src={findIconSmall(selectedWeather.current.condition.code)} height={200} width={200} className="mx-auto" alt="" />
 
               <div>{selectedWeather?.current.condition.text}</div>
               <div className="font-extrabold  text-5xl">{selectedWeather?.current.temp_c}°C</div>
@@ -155,13 +158,13 @@ export default function Home() {
               {fiveHourWeather ?
                 fiveHourWeather?.map((weather, i) => {
                   const hour = weather.time.split(' ')[1]
-                  const icon = weather.condition.icon
+                  const code = weather.condition.code
                   const degree = weather.temp_c
 
                   return (
                     <div key={i} className=" rounded-md p-2 text-center">
                       <p>{hour}</p>
-                      <Image className="w-12" src={Icons[Math.floor(Math.random() * Icons.length)]} height={200} width={200} alt="" />
+                      <Image className="w-12" src={findIconSmall(code)} height={200} width={200} alt="" />
                       <p>{degree}°</p>
                     </div>
                   )
