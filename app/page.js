@@ -5,7 +5,7 @@ import rainy from '@/public/assets/rainy-2.svg'
 import snowy from '@/public/assets/snowy-2.svg'
 import rainy5 from '@/public/assets/rainy-5.svg'
 import thunder from '@/public/assets/thunder.svg'
-import { db } from "./db";
+import { db, weather_icon } from "./db";
 
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
@@ -48,19 +48,21 @@ const ChartData = ({ dataWeather }) => {
   )
 }
 
-const getDate =()=>{
-  const date = new Date().toLocaleString('en-AU', { timeZone: "Australia/Sydney", hour12:false })
+const getDate = () => {
+  const date = new Date().toLocaleString('en-AU', { timeZone: "Australia/Sydney", hour12: false })
 
   return date
 }
 
 export default function Home() {
-  const [currentDateTime, setCurrentDateTime] = useState(getDate())
-  const [currentHour, setCurrentHour] = useState(currentDateTime?.split(',')[1].split(':')[0])
-  const [fiveHourWeather, setFiveHourWeather] = useState()
   const [selectedLocation, setSelectedLocation] = useState('')
   const [selectedWeather, setSelectedWeather] = useState()
+  // const [currentDateTime, setCurrentDateTime] = useState(getDate())
+  const [currentDateTime, setCurrentDateTime] = useState()
 
+  const [currentHour, setCurrentHour] = useState()
+  const [fiveHourWeather, setFiveHourWeather] = useState()
+  const [icon, setIcon] = useState()
   const Icons = [cloudy_day, snowy, rainy, rainy5, thunder]
 
   const fetchData = async () => {
@@ -68,6 +70,8 @@ export default function Home() {
     const data = await res.json();
     // setResult(() => data.map(city => city.name))
     setSelectedWeather(data)
+    setCurrentDateTime(data.location.localtime)
+    setCurrentHour(data.location.localtime.split(' ')[1].split(':')[0])
   }
 
   useEffect(() => {
@@ -90,14 +94,26 @@ export default function Home() {
       setFiveHourWeather(FiveWeather)
     }
 
-    if (selectedWeather) {
+    const findIcon = (code) => {
+      if (code) {
+        const icon = weather_icon.find(item => item.code === code)
+        //  console.log(icon);
+        setIcon(icon)
+
+      }
+    }
+
+    if (selectedWeather ?? currentHour) {
+      findIcon(selectedWeather.current.condition.code)
       getFiveHourWeather(selectedWeather)
     }
   }, [selectedWeather])
 
   // console.log(fiveHourWeather);
   // console.log(selectedWeather)
-  console.log('location',selectedLocation)
+  // console.log('location',selectedLocation)
+  // console.log(icon?.icon)
+  // console.log(cloudy_day)
 
 
 
@@ -128,7 +144,8 @@ export default function Home() {
           {selectedWeather ? <div>
             <div className="text-center">
               <div className="mt-2">{selectedLocation}</div>
-              <Image src={`https://${selectedWeather?.current.condition.icon}`} height={200} width={200} className="mx-auto" alt="" />
+              <Image src={icon?.icon} height={200} width={200} className="mx-auto" alt="" />
+
               <div>{selectedWeather?.current.condition.text}</div>
               <div className="font-extrabold  text-5xl">{selectedWeather?.current.temp_c}°C</div>
             </div>

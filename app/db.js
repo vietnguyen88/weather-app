@@ -1,3 +1,34 @@
+import cloudy0 from '@/public/assets/cloudy.svg'
+import cloudy1 from '@/public/assets/cloudy-day-1.svg'
+import cloudy2 from '@/public/assets/cloudy-day-2.svg'
+import cloudy3 from '@/public/assets/cloudy-day-3.svg'
+import cloudyn1 from '@/public/assets/cloudy-night-1.svg'
+import cloudyn2 from '@/public/assets/cloudy-night-2.svg'
+import cloudyn3 from '@/public/assets/cloudy-night-3.svg'
+import day from '@/public/assets/day.svg'
+import night from '@/public/assets/night.svg'
+import rainy1 from '@/public/assets/rainy-1.svg'
+import rainy2 from '@/public/assets/rainy-2.svg'
+import rainy3 from '@/public/assets/rainy-3.svg'
+import rainy4 from '@/public/assets/rainy-4.svg'
+import rainy5 from '@/public/assets/rainy-5.svg'
+import rainy6 from '@/public/assets/rainy-6.svg'
+import rainy7 from '@/public/assets/rainy-7.svg'
+import snowy1 from '@/public/assets/snowy-1.svg'
+import snowy2 from '@/public/assets/snowy-2.svg'
+import snowy3 from '@/public/assets/snowy-3.svg'
+import snowy4 from '@/public/assets/snowy-4.svg'
+import snowy5 from '@/public/assets/snowy-5.svg'
+import snowy6 from '@/public/assets/snowy-6.svg'
+
+import thunder from '@/public/assets/thunder.svg'
+
+
+
+
+
+
+
 export const db = 
 {
     "location": {
@@ -1095,7 +1126,7 @@ export const db =
     }
   }
 
-  export const autocomplete = [
+ export const autocomplete = [
     {
       "id": 2801268,
       "name": "London",
@@ -1140,5 +1171,296 @@ export const db =
       "lat": 46.55,
       "lon": 125.12,
       "url": "longfeng-heilongjiang-china"
+    }
+  ]
+
+ export const weather_icon = [
+    {
+      "code": 1000,
+      "day": "Sunny",
+      "night": "Clear",
+      "icon": day
+    },
+    {
+      "code": 1003,
+      "day": "Partly cloudy",
+      "night": "Partly cloudy",
+      "icon": cloudy1
+    },
+    {
+      "code": 1006,
+      "day": "Cloudy",
+      "night": "Cloudy",
+      "icon": cloudy0
+    },
+    {
+      "code": 1009,
+      "day": "Overcast",
+      "night": "Overcast",
+      "icon": cloudy0
+    },
+    {
+      "code": 1030,
+      "day": "Mist",
+      "night": "Mist",
+      "icon": cloudyn3
+    },
+    {
+      "code": 1063,
+      "day": "Patchy rain possible",
+      "night": "Patchy rain possible",
+      "icon": rainy1
+    },
+    {
+      "code": 1066,
+      "day": "Patchy snow possible",
+      "night": "Patchy snow possible",
+      "icon": snowy1
+    },
+    {
+      "code": 1069,
+      "day": "Patchy sleet possible",
+      "night": "Patchy sleet possible",
+      "icon": snowy4
+    },
+    {
+      "code": 1072,
+      "day": "Patchy freezing drizzle possible",
+      "night": "Patchy freezing drizzle possible",
+      "icon": snowy5
+    },
+    {
+      "code": 1087,
+      "day": "Thundery outbreaks possible",
+      "night": "Thundery outbreaks possible",
+      "icon": thunder
+    },
+    {
+      "code": 1114,
+      "day": "Blowing snow",
+      "night": "Blowing snow",
+      "icon": snowy6
+    },
+    {
+      "code": 1117,
+      "day": "Blizzard",
+      "night": "Blizzard",
+      "icon": snowy6
+    },
+    {
+      "code": 1135,
+      "day": "Fog",
+      "night": "Fog",
+      "icon": cloudyn2
+    },
+    {
+      "code": 1147,
+      "day": "Freezing fog",
+      "night": "Freezing fog",
+      "icon": snowy6
+    },
+    {
+      "code": 1150,
+      "day": "Patchy light drizzle",
+      "night": "Patchy light drizzle",
+      "icon": rainy5
+    },
+    {
+      "code": 1153,
+      "day": "Light drizzle",
+      "night": "Light drizzle",
+      "icon": rainy7
+    },
+    {
+      "code": 1168,
+      "day": "Freezing drizzle",
+      "night": "Freezing drizzle",
+      "icon": snowy5
+    },
+    {
+      "code": 1171,
+      "day": "Heavy freezing drizzle",
+      "night": "Heavy freezing drizzle",
+      "icon": snowy6
+    },
+    {
+      "code": 1180,
+      "day": "Patchy light rain",
+      "night": "Patchy light rain",
+      "icon": rainy4
+    },
+    {
+      "code": 1183,
+      "day": "Light rain",
+      "night": "Light rain",
+      "icon": rainy4
+    },
+    {
+      "code": 1186,
+      "day": "Moderate rain at times",
+      "night": "Moderate rain at times",
+      "icon": rainy5
+    },
+    {
+      "code": 1189,
+      "day": "Moderate rain",
+      "night": "Moderate rain",
+      "icon": rainy5
+    },
+    {
+      "code": 1192,
+      "day": "Heavy rain at times",
+      "night": "Heavy rain at times",
+      "icon": rainy6
+    },
+    {
+      "code": 1195,
+      "day": "Heavy rain",
+      "night": "Heavy rain",
+      "icon": rainy6
+    },
+    {
+      "code": 1198,
+      "day": "Light freezing rain",
+      "night": "Light freezing rain",
+      "icon": rainy7
+    },
+    {
+      "code": 1201,
+      "day": "Moderate or heavy freezing rain",
+      "night": "Moderate or heavy freezing rain",
+      "icon": rainy7
+    },
+    {
+      "code": 1204,
+      "day": "Light sleet",
+      "night": "Light sleet",
+      "icon": snowy1
+    },
+    {
+      "code": 1207,
+      "day": "Moderate or heavy sleet",
+      "night": "Moderate or heavy sleet",
+      "icon": snowy2
+    },
+    {
+      "code": 1210,
+      "day": "Patchy light snow",
+      "night": "Patchy light snow",
+      "icon": snowy2
+    },
+    {
+      "code": 1213,
+      "day": "Light snow",
+      "night": "Light snow",
+      "icon": snowy3
+    },
+    {
+      "code": 1216,
+      "day": "Patchy moderate snow",
+      "night": "Patchy moderate snow",
+      "icon": snowy3
+    },
+    {
+      "code": 1219,
+      "day": "Moderate snow",
+      "night": "Moderate snow",
+      "icon": snowy4
+    },
+    {
+      "code": 1222,
+      "day": "Patchy heavy snow",
+      "night": "Patchy heavy snow",
+      "icon": snowy4
+    },
+    {
+      "code": 1225,
+      "day": "Heavy snow",
+      "night": "Heavy snow",
+      "icon": snowy5
+    },
+    {
+      "code": 1237,
+      "day": "Ice pellets",
+      "night": "Ice pellets",
+      "icon": snowy6
+    },
+    {
+      "code": 1240,
+      "day": "Light rain shower",
+      "night": "Light rain shower",
+      "icon": rainy2
+    },
+    {
+      "code": 1243,
+      "day": "Moderate or heavy rain shower",
+      "night": "Moderate or heavy rain shower",
+      "icon": rainy3
+    },
+    {
+      "code": 1246,
+      "day": "Torrential rain shower",
+      "night": "Torrential rain shower",
+      "icon": rainy6
+    },
+    {
+      "code": 1249,
+      "day": "Light sleet showers",
+      "night": "Light sleet showers",
+      "icon": snowy2
+    },
+    {
+      "code": 1252,
+      "day": "Moderate or heavy sleet showers",
+      "night": "Moderate or heavy sleet showers",
+      "icon": snowy4
+    },
+    {
+      "code": 1255,
+      "day": "Light snow showers",
+      "night": "Light snow showers",
+      "icon": snowy5
+    },
+    {
+      "code": 1258,
+      "day": "Moderate or heavy snow showers",
+      "night": "Moderate or heavy snow showers",
+      "icon": snowy6
+    },
+    {
+      "code": 1261,
+      "day": "Light showers of ice pellets",
+      "night": "Light showers of ice pellets",
+      "icon": snowy1
+    },
+    {
+      "code": 1264,
+      "day": "Moderate or heavy showers of ice pellets",
+      "night": "Moderate or heavy showers of ice pellets",
+      "icon": snowy1
+    },
+    {
+      "code": 1273,
+      "day": "Patchy light rain with thunder",
+      "night": "Patchy light rain with thunder",
+      "icon": snowy1
+    },
+    {
+      "code": 1276,
+      "day": "Moderate or heavy rain with thunder",
+      "night": "Moderate or heavy rain with thunder",
+      "icon": thunder
+    },
+    {
+      "code": 1279,
+      "day": "Patchy light snow with thunder",
+      "night": "Patchy light snow with thunder",
+      "icon": thunder
+    },
+    {
+      "code": 1282,
+      "day": "Moderate or heavy snow with thunder",
+      "night": "Moderate or heavy snow with thunder",
+      "icon": thunder
     }
   ]
